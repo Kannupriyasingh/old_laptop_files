@@ -1,0 +1,42 @@
+sudo /etc/init.d/mysql stop
+
+
+sudo mysqld --skip-grant-tables &
+
+
+sudo mkdir -v /var/run/mysqld && sudo chown mysql /var/run/mysqld
+
+
+mysql -u root mysql
+
+
+	(( if this error
+
+	ERROR 2002 (HY000): Can't connect to local MySQL server through socket
+	 '/var/run/mysqld/mysqld.sock' (2)
+	))
+
+	sudo apt-get install mysql-server
+
+
+
+
+if mysql < 8.0
+
+UPDATE
+      mysql.user
+    SET
+      Password = PASSWORD('YOURNEWPASSWORD')
+    WHERE
+      User = 'root';
+    FLUSH PRIVILEGES;
+    exit;
+
+
+else
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'YOURNEWPASSWORD';
+
+
+(( change YOURNEWPASSWORD with new password ))
+

@@ -1,0 +1,18 @@
+1) ffmpeg -> a tool for converting audio or video formats. It can also capture and encode in real-time from hardware or software sources.
+
+2) rnnoise -> (for Audio) RNNoise is a noise suppression library
+
+3) kenlm -> a library that imple-ments two data structures for efficient lan-guage model queries, reducing both time and memory costs. These two data structure are probing and trie (probing is designed for speed and trie is designed to save memory but still be fast).
+
+4) flashlight -> enabling teams to rapidly and easily modify deep and ML frameworks to better fit their needs.
+
+5) fairseq -> (speech recognition) Fairseq is a sequence modeling toolkit for training custom models for translation, summarization, and other text generation tasks. It is written in PyTorch.
+
+
+
+
+	speech to text => fairseq, flashlight (kenlm is required dependency for flashlight)
+
+	audio processing => rnnoise
+
+	for rotating video we have used ffmpeg lib
